@@ -34,7 +34,7 @@
       };
 
       window.onmessage = function(e) {
-        if (event.origin.startsWith("http://localhost:3000/")) {
+        if (!e.origin.startsWith("http://localhost:3000/")) {
           return;
         }
 
