@@ -33,12 +33,13 @@
       };
       
       window.addEventListener('message', event => {
-        if (event.origin.startsWith('http://localhost:3000/')) { 
-          document.getElementById("code").textContent = event.data;
-        console.log(event.data); 
-        } else {
-          return; 
-        } 
+//         if (event.origin.startsWith('http://localhost:3000/')) { 
+          const parent = window.parent;
+          const data = localStorage;
+          parent.postMessage(data, "*");
+//         } else {
+//           return; 
+//         } 
       }); 
 
 //       window.onmessage = function(e) {
