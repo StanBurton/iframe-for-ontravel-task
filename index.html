@@ -34,6 +34,7 @@
       
       window.addEventListener('message', event => {
         if (event.origin.startsWith('http://localhost:3000/')) { 
+          document.getElementById("code").textContent = event.data;
         console.log(event.data); 
         } else {
           return; 
