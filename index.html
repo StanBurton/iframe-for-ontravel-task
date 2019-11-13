@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <title>Fake Web For OT</title>
+    <style>
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 18rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="d-flex">
+      <h1 class="text-center">It's iframe's Block</h1>
+      <code id="code" class="bg-light"></code>
+    </div>
+    <script>
+      window.onload = function() {
+        const localStorageInfo = {
+          name: "It's iframe's localStorage",
+          url: String(window.location),
+        };
+
+        localStorage.setItem("localStorageInfo", localStorageInfo);
+        document.getElementById(
+          "code"
+        ).textContent = JSON.stringify(localStorageInfo);
+      };
+    </script>
+  </body>
+</html>
