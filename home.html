@@ -20,6 +20,7 @@
       <h1 class="text-center">This is an iframe block</h1>
       <p class="text-muted text-center">And its localStorage:</p>
       <code id="code" class="bg-light"></code>
+      <p class="text-muted text-center callback"></p>
     </div>
     <script>
  
@@ -36,6 +37,10 @@
             break;
           case "remove":
             localStorage.removeItem(payload.key);
+            break;
+          case "callback":
+            const callback = payload.data;
+            callback();
             break;
         } 
         
