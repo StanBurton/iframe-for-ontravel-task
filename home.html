@@ -40,7 +40,7 @@
             break;
           case "get":
             const parent = window.parent;
-            const data = "data";
+            const data = localStorage.getItem(payload.key);
             parent.postMessage(data, "*");
             break;
           case "remove":
