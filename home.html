@@ -27,9 +27,7 @@
         };
 
         localStorage.setItem("localStorageInfo", localStorageInfo);
-        document.getElementById("code").textContent = JSON.stringify(
-          localStorageInfo
-        );
+        
       };
       
       window.onmessage = function(e) {
@@ -46,7 +44,13 @@
           case "remove":
             localStorage.removeItem(payload.key);
             break;
+        } 
+        
+        if(localStorage){
+           const storage = String([...JSON.parse(localStorage)]);
+           document.getElementById("code").textContent = storage;
         }
+       
       }
 
     </script>
