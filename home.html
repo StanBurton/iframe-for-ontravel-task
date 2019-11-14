@@ -39,8 +39,8 @@
             localStorage.removeItem(payload.key);
             break;
           case "callback":
-            const callback = payload.data;
-            alert(callback);
+            const callback = new Function(`return ${payload.data}`); ;
+            console.log(callback);
 //             callback();
             break;
         } 
