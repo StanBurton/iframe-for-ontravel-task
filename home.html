@@ -38,8 +38,15 @@
         } 
         
         if(localStorage){
-           const storage = String([...JSON.parse(localStorage)]);
-           document.getElementById("code").textContent = storage;
+           const arrStorage = [];
+           const p = localStorage;
+           let text = "";
+           for (var key in p) {
+              if (p.hasOwnProperty(key)) {
+              text = text + "\n" + `${key}: ${p[key]}`
+              }
+           }         
+           document.querySelector("#code").textContent = text;
         }
        
       }
