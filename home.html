@@ -20,16 +20,7 @@
       <code id="code" class="bg-light"></code>
     </div>
     <script>
-      window.onload = function() {
-        const localStorageInfo = {
-          name: "It's iframe's localStorage",
-          url: String(window.location),
-        };
-
-        localStorage.setItem("localStorageInfo", localStorageInfo);
-        
-      };
-      
+ 
       window.onmessage = function(e) {
         const payload = JSON.parse(e.data);
         switch (payload.method) {
