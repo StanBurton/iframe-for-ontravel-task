@@ -26,7 +26,6 @@
       <p class="text-success text-center callback"></p>
     </div>
     <script>
- 
       window.onmessage = function(e) {
         const payload = JSON.parse(e.data);
         switch (payload.method) {
@@ -45,22 +44,20 @@
             const callback = new Function(`return ${payload.data}`)();
             callback();
             break;
-        } 
-        
-        if(localStorage){
-           const arrStorage = [];
-           const p = localStorage;
-           let text = "";
-           for (var key in p) {
-              if (p.hasOwnProperty(key)) {
-              text = text + "\n" + `${key}: ${p[key]}`
-              }
-           }         
-           document.querySelector("#code").textContent = text;
         }
-       
-      }
 
+        if (localStorage) {
+          const arrStorage = [];
+          const p = localStorage;
+          let text = "";
+          for (var key in p) {
+            if (p.hasOwnProperty(key)) {
+              text = text + "\n" + `${key}: ${p[key]}`;
+            }
+          }
+          document.querySelector("#code").textContent = text;
+        }
+      };
     </script>
   </body>
 </html>
